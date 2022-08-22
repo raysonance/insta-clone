@@ -1,5 +1,6 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
+import Icon from "react-native-vector-icons/FontAwesome5"
 
 const Header = () => {
   return (
@@ -11,9 +12,23 @@ const Header = () => {
         />
       </TouchableOpacity>
       <View style={styles.iconContainer}>
-        <Text style={styles.icons}>Dummy</Text>
-        <Text style={styles.icons}>Dummy</Text>
-        <Text style={styles.icons}>Dummy</Text>
+        <TouchableOpacity>
+          <Image
+            style={styles.icons}
+            source={require("../assets/add-post.png")}
+            tintColor={"white"}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity style={{ marginRight: 14, marginTop: 2 }}>
+          <Icon name="heart" size={25} color="#fff" />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={{ marginTop: 2 }}>
+          <View style={styles.unreadbadge}>
+            <Text style={styles.unreadbadgetext}>11</Text>
+          </View>
+          <Icon name="facebook-messenger" size={25} color="#fff" />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -28,20 +43,39 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginHorizontal: 20,
   },
-  
+
   iconContainer: {
     flexDirection: "row",
   },
 
   icons: {
-    width: 30,
-    color: "white",
-    marginRight: 5,
+    width: 25,
+    height: 30,
+    marginRight: 14,
+    resizeMode: "contain",
   },
 
   logo: {
     width: 100,
     height: 50,
     resizeMode: "contain",
+  },
+
+  unreadbadge: {
+    zIndex: 100,
+    width: 25,
+    height: 18,
+    position: "absolute",
+    alignItems: "center",
+    backgroundColor: "#FF3250",
+    borderRadius: 25,
+    justifyContent: 'center',
+    left: 9,
+    bottom: 17
+  },
+
+  unreadbadgetext: {
+    color: "white",
+    fontWeight: '700',
   },
 });
