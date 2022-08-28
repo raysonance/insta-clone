@@ -4,7 +4,7 @@ import { USERS } from "../data/users";
 
 const Story = () => {
   return (
-    <View>
+    <View style={{marginBottom: 10}}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {USERS.map((item, index) => (
           <TouchableOpacity key={index}>

@@ -2,6 +2,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { Divider } from "react-native-elements";
 
+
 const postFooterIcons = [
   {
     name: "Like",
@@ -29,7 +30,7 @@ const postFooterIcons = [
 const Post = ({ pfp, user, imageUrl, likes, comment }) => {
   return (
     <View style={{ marginTop: 5 }}>
-      <Divider horizontal />
+      <Divider width={1} orientation='vertical' />
       <PostHeader pfp={pfp} user={user} />
       <PostImage imageUrl={imageUrl} />
       <PostFooter likes={likes} comment={comment} />
@@ -131,6 +132,7 @@ const Comment = ({ comment }) => (
     )}
   </View>
 );
+
 
 const styles = StyleSheet.create({
   story: {
