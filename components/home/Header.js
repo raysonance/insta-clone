@@ -8,14 +8,14 @@ const Header = () => {
       <TouchableOpacity>
         <Image
           style={styles.logo}
-          source={require("../assets/header-logo.png")}
+          source={require("../../assets/header-logo.png")}
         />
       </TouchableOpacity>
       <View style={styles.iconContainer}>
         <TouchableOpacity>
           <Image
             style={styles.icons}
-            source={require("../assets/add-post.png")}
+            source={require("../../assets/add-post.png")}
             tintColor={"white"}
           />
         </TouchableOpacity>

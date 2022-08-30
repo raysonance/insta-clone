@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import React from "react";
-import Header from "../components/Header";
-import Story from "../components/Story";
-import Post from "../components/Post";
+import Header from "../components/home/Header";
+import Story from "../components/home/Story";
+import Post from "../components/home/Post";
+import BottomTabs from "../components/home/BottomTabs";
 import { POSTS } from "../data/posts";
-import BottomTabs from "../components/BottomTabs";
 import { bottomTabIcons } from "../data/bottomTabIcons";
 import { USERS } from "../data/users";
 

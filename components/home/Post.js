@@ -69,7 +69,7 @@ const PostHeader = ({ pfp, user }) => (
 );
 
 const PostImage = ({ imageUrl }) => (
-  <View style={{ alignItems: "center", justifyContent: "center", height: 450 }}>
+  <View style={{ alignItems: "center", justifyContent: "center", height: 400 }}>
     <Image style={styles.postImage} source={imageUrl} />
   </View>
 );
@@ -81,7 +81,7 @@ const PostFooter = ({ likes, comment }) => (
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        marginVertical: 5,
+        marginVertical: 10,
       }}
     >
       <View
@@ -90,23 +90,31 @@ const PostFooter = ({ likes, comment }) => (
           justifyContent: "space-evenly",
         }}
       >
-        <Image
-          source={{ uri: postFooterIcons[0].imageUrl }}
-          style={styles.footerIcons}
-        />
-        <Image
-          source={{ uri: postFooterIcons[1].imageUrl }}
-          style={styles.footerIcons}
-        />
-        <Image
-          source={{ uri: postFooterIcons[2].imageUrl }}
-          style={styles.footerIcons}
-        />
+        <TouchableOpacity>
+          <Image
+            source={{ uri: postFooterIcons[0].imageUrl }}
+            style={styles.footerIcons}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            source={{ uri: postFooterIcons[1].imageUrl }}
+            style={styles.footerIcons}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            source={{ uri: postFooterIcons[2].imageUrl }}
+            style={styles.footerIcons}
+          />
+        </TouchableOpacity>
       </View>
-      <Image
-        source={{ uri: postFooterIcons[3].imageUrl }}
-        style={{ width: 25, height: 25 }}
-      />
+      <TouchableOpacity>
+        <Image
+          source={{ uri: postFooterIcons[3].imageUrl }}
+          style={{ width: 25, height: 25 }}
+        />
+      </TouchableOpacity>
     </View>
     <Text style={{ color: "white", fontWeight: "700" }}>{likes} likes</Text>
     <Comment comment={comment} />
@@ -114,7 +122,7 @@ const PostFooter = ({ likes, comment }) => (
 );
 
 const Comment = ({ comment }) => (
-  <View style={{ marginTop: 5 }}>
+  <View style={{ margin: 5 }}>
     {comment.length && (
       <View style={{ flexDirection: "row" }}>
         <Text style={{ color: "white", fontWeight: "700", fontSize: 13 }}>
@@ -149,8 +157,8 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
   },
   footerIcons: {
-    width: 25,
-    height: 25,
+    width: 27,
+    height: 27,
     marginRight: 15,
   },
 });

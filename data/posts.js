@@ -4,7 +4,7 @@ export const POSTS = [
   {
     imageUrl: USERS[1].image,
     user: USERS[1].user,
-    likes: 2330,
+    likes: '2,330',
     caption: "Rengoku is the coolest",
     pfp: USERS[1].image,
     comments: [
@@ -21,7 +21,7 @@ export const POSTS = [
   {
     imageUrl: USERS[4].image,
     user: USERS[4].user,
-    likes: 7330,
+    likes: '7,330',
     caption: "Goodnight",
     pfp: USERS[4].image,
     comments: [
