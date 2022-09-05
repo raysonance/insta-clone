@@ -16,11 +16,12 @@ const Header = ({ navigation }) => {
     <View
       style={{
         flexDirection: "row",
+        justifyContent: "center",
         alignItems: "center",
         marginHorizontal: 5,
       }}
     >
-      <View style={{ alignItems: "center" }}>
+      <View style={{ alignItems: "center", marginRight: "auto" }}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image
             source={{
@@ -30,7 +31,7 @@ const Header = ({ navigation }) => {
           />
         </TouchableOpacity>
       </View>
-      <View style={{ alignItems: "center", marginLeft: "33%" }}>
+      <View style={{ alignItems: "center", marginRight: "auto" }}>
         <Text style={{ color: "white", fontSize: 18, fontWeight: "700" }}>
           NEW POST
         </Text>
