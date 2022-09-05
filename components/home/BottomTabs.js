@@ -13,7 +13,7 @@ const BottomTabs = ({ bottomTabIcons, user }) => {
   );
 
   return (
-    <View>
+    <View style={{ height: "8%" }}>
       <Divider width={1} orientation="vertical" />
       <View
         style={{
@@ -30,12 +30,7 @@ const BottomTabs = ({ bottomTabIcons, user }) => {
           </View>
         ))}
         <TouchableOpacity onPress={() => setActiveTab(user.user)}>
-          <Image
-            source={
-              user.image
-            }
-            style={styles.icon}
-          />
+          <Image source={user.image} style={styles.icon} />
         </TouchableOpacity>
       </View>
     </View>

@@ -7,14 +7,14 @@ import BottomTabs from "../components/home/BottomTabs";
 import { POSTS } from "../data/posts";
 import { bottomTabIcons } from "../data/bottomTabIcons";
 import { USERS } from "../data/users";
+import GlobalStyles from "../GlobalStyles";
 
-
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
-    <View>
-      <Header />
+    <View style={GlobalStyles.AndroidSafeArea}>
+      <Header navigation={navigation} />
       <Story />
-      <ScrollView vertical showsVerticalScrollIndicator={false} style={{ height: '71%'}}>
+      <ScrollView vertical showsVerticalScrollIndicator={false}>
         {POSTS.map((item, index) => (
           <Post
             pfp={item.pfp}

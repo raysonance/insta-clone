@@ -1,8 +1,8 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import Icon from "react-native-vector-icons/FontAwesome5"
+import Icon from "react-native-vector-icons/FontAwesome5";
 
-const Header = () => {
+const Header = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
@@ -12,7 +12,7 @@ const Header = () => {
         />
       </TouchableOpacity>
       <View style={styles.iconContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.push("AddNewPost")}>
           <Image
             style={styles.icons}
             source={require("../../assets/add-post.png")}
@@ -69,13 +69,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#FF3250",
     borderRadius: 25,
-    justifyContent: 'center',
+    justifyContent: "center",
     left: 9,
-    bottom: 17
+    bottom: 17,
   },
 
   unreadbadgetext: {
     color: "white",
-    fontWeight: '700',
+    fontWeight: "700",
   },
 });
