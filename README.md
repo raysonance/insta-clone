@@ -1,4 +1,4 @@
-# My Universal React Project
+# My Instagram Clone React Native Project
 
 <p>
   <!-- iOS -->
@@ -14,6 +14,8 @@
     <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
   </a>
 </p>
+
+![insta](https://user-images.githubusercontent.com/76729273/216839010-2e671752-cffb-4f21-9e8d-ba829b90d43a.jpg)
 
 ## 🚀 How to use
 
