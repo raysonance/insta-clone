@@ -1,0 +1,184 @@
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { Divider } from "react-native-elements";
+
+const postFooterIcons = [
+  {
+    name: "Like",
+    imageUrl:
+      "https://img.icons8.com/fluency-systems-regular/60/ffffff/like--v1.png",
+    likedImageUrl: "https://img.icons8.com/ios-glyphs/90/fa314a/like--v1.png",
+  },
+  {
+    name: "Comment",
+    imageUrl:
+      "https://img.icons8.com/material-outlined/60/ffffff/filled-topic.png",
+  },
+  {
+    name: "Share",
+    imageUrl:
+      "https://img.icons8.com/fluency-systems-regular/60/ffffff/sent.png",
+  },
+  {
+    name: "Save",
+    imageUrl:
+      "https://img.icons8.com/fluency-systems-regular/60/ffffff/bookmark-ribbon--v1.png",
+  },
+  {
+    name: "Heart",
+    imageUrl:
+      "https://img.icons8.com/fluency-systems-regular/60/ffffff/bookmark-ribbon--v1.png",
+  },
+];
+
+const Product = ({ pfp, user, imageUrl, likes, comment, caption }) => {
+  return (
+    <View style={{ marginTop: 5 }}>
+      <Divider width={1} orientation="vertical" />
+      <PostHeader pfp={pfp} user={user} />
+      <PostImage imageUrl={imageUrl} />
+      <PostFooter likes={likes} comment={comment} caption={caption} />
+    </View>
+  );
+};
+
+export default Product;
+
+const PostHeader = ({ pfp, user }) => (
+  <View
+    style={{
+      flexDirection: "row",
+      justifyContent: "space-between",
+      margin: 5,
+      alignItems: "center",
+    }}
+  >
+    <View
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+      }}
+    >
+      <Image style={styles.story} source={pfp} />
+      <Text style={{ color: "white", fontSize: 14, marginLeft: 5 }}>
+        {user}
+      </Text>
+    </View>
+    <TouchableOpacity style={{ paddingBottom: 10 }}>
+      <Text style={{ color: "white", fontSize: 25, fontWeight: "900" }}>
+        ...
+      </Text>
+    </TouchableOpacity>
+  </View>
+);
+
+const PostImage = ({ imageUrl }) => {
+  console.log(imageUrl);
+  return (
+    <View
+      style={{ alignItems: "center", justifyContent: "center", height: 400 }}
+    >
+      <Image style={styles.postImage} source={{ uri: imageUrl }} />
+    </View>
+  );
+};
+
+const PostFooter = ({ likes, comment, caption }) => {
+  const [activeLike, setActiveLike] = useState(postFooterIcons[0].imageUrl);
+
+  return (
+    <View style={{ marginHorizontal: 10 }}>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginVertical: 10,
+        }}
+      >
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+          }}
+        >
+          {/* <TouchableOpacity
+            onPress={() =>
+              activeLike == postFooterIcons[0].imageUrl
+                ? setActiveLike(postFooterIcons[0].likedImageUrl)
+                : setActiveLike(postFooterIcons[0].imageUrl)
+            }
+          >
+            <Image source={{ uri: activeLike }} style={styles.footerIcons} />
+          </TouchableOpacity> */}
+          <TouchableOpacity>
+            <Image
+              source={{ uri: postFooterIcons[1].imageUrl }}
+              style={styles.footerIcons}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={{ uri: postFooterIcons[2].imageUrl }}
+              style={styles.footerIcons}
+            />
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity>
+          <Image
+            source={{ uri: postFooterIcons[3].imageUrl }}
+            style={{ width: 25, height: 25 }}
+          />
+        </TouchableOpacity>
+      </View>
+      <Text style={{ color: "white", fontWeight: "700", marginBottom: 20 }}>
+        Name: {caption}
+      </Text>
+      <Text style={{ color: "white", fontWeight: "700", marginBottom: 20 }}>
+        Price: ${likes}
+      </Text>
+      {/* <Comment comment={comment} /> */}
+    </View>
+  );
+};
+
+const Comment = ({ comment }) => (
+  <View style={{ margin: 5 }}>
+    {comment.length && (
+      <View style={{ flexDirection: "row" }}>
+        <Text style={{ color: "white", fontWeight: "700", fontSize: 13 }}>
+          {comment[0].user}{" "}
+        </Text>
+        <Text style={{ color: "white", fontWeight: "500", fontSize: 13 }}>
+          {comment[0].comment}
+        </Text>
+      </View>
+    )}
+    {comment.length > 1 ? (
+      <Text style={{ color: "grey" }}>View all {comment.length} comments </Text>
+    ) : (
+      pass
+    )}
+  </View>
+);
+
+const styles = StyleSheet.create({
+  story: {
+    width: 30,
+    height: 30,
+    borderRadius: 50,
+    borderWidth: 2,
+    borderColor: "#ff8501",
+    resizeMode: "contain",
+  },
+  postImage: {
+    width: "100%",
+    height: "100%",
+    resizeMode: "cover",
+  },
+  footerIcons: {
+    width: 27,
+    height: 27,
+    marginRight: 15,
+  },
+});

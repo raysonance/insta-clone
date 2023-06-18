@@ -6,7 +6,7 @@ const AddPost = ({ navigation }) => {
   return (
     <View>
       <Header navigation={navigation} />
-      <FormikPostUploader />
+      <FormikPostUploader navigation={navigation} />
     </View>
   );
 };
@@ -33,7 +33,7 @@ const Header = ({ navigation }) => {
       </View>
       <View style={{ alignItems: "center", marginRight: "auto" }}>
         <Text style={{ color: "white", fontSize: 18, fontWeight: "700" }}>
-          NEW POST
+          NEW PRODUCT
         </Text>
       </View>
     </View>

@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, Image, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import { USERS } from "../../data/users";
+import { USERS } from "../../data/users2";
 
 const Story = () => {
   return (
